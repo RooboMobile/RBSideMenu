@@ -13,10 +13,8 @@
 
 @property (strong, readonly, nonatomic) RBSideMenuController *sideMenuViewController;
 
-// IB Action Helper methods
-
-- (IBAction)presentLeftMenuViewController:(id)sender;
-- (IBAction)presentRightMenuViewController:(id)sender;
+- (void)presentLeftMenuViewController;
+- (void)presentRightMenuViewController;
 @end
 
 @protocol RBSideMenuDelegate <NSObject>
@@ -39,10 +37,7 @@
 
 @property (assign, readwrite, nonatomic) NSTimeInterval animationDuration;//视差动画时长
 @property (assign, readwrite, nonatomic)  BOOL interactivePopGestureRecognizerEnabled;//全屏Pop手势是否可用
-@property (assign, readwrite, nonatomic) CGAffineTransform menuViewControllerTransformation;
-@property (assign, readwrite, nonatomic)  BOOL scaleContentView;
 @property (assign, readwrite, nonatomic)  BOOL scaleBackgroundImageView;
-@property (assign, readwrite, nonatomic)  BOOL scaleMenuView;
 @property (assign, readwrite, nonatomic)  BOOL fadeMenuView;
 @property (assign, readwrite, nonatomic)  BOOL parallaxEnabled;
 @property (assign, readwrite, nonatomic)  BOOL bouncesHorizontally;
@@ -52,17 +47,9 @@
 @property (assign, readwrite, nonatomic)  CGFloat parallaxContentMinimumRelativeValue;
 @property (assign, readwrite, nonatomic)  CGFloat parallaxContentMaximumRelativeValue;
 
-@property (assign, readwrite, nonatomic) BOOL panGestureEnabled;
 @property (assign, readwrite, nonatomic) BOOL panFromEdge;
 @property (assign, readwrite, nonatomic) NSUInteger panMinimumOpenThreshold;
 
-@property (assign, readwrite, nonatomic)  BOOL contentViewShadowEnabled;
-@property (strong, readwrite, nonatomic)  UIColor *contentViewShadowColor;
-@property (assign, readwrite, nonatomic)  CGSize contentViewShadowOffset;
-@property (assign, readwrite, nonatomic)  CGFloat contentViewShadowOpacity;
-@property (assign, readwrite, nonatomic)  CGFloat contentViewShadowRadius;
-@property (assign, readwrite, nonatomic)  CGFloat contentViewFadeOutAlpha;
-@property (assign, readwrite, nonatomic)  CGFloat contentViewScaleValue;
 @property (assign, readwrite, nonatomic)  CGFloat contentViewInLandscapeOffsetCenterX;
 @property (assign, readwrite, nonatomic)  CGFloat contentViewInPortraitOffsetCenterX;
 @property (strong, readwrite, nonatomic) UIImage *backgroundImage;
