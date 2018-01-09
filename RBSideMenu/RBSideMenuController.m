@@ -552,6 +552,10 @@ NSString * const RBSideMenuDidHideMenuViewController = @"kRBSideMenuDidHideMenuV
             return NO;
         }
     }
+    if([touch.view isKindOfClass:[UISlider class]]){
+        
+        return NO;
+     }
     if (self.panFromEdge && [gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] && !self.visible) {
         CGPoint point = [touch locationInView:gestureRecognizer.view];
         if (point.x < 20.0 || point.x > self.view.frame.size.width - 20.0) {
