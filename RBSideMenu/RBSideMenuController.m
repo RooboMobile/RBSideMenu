@@ -30,10 +30,6 @@
     [self.sideMenuViewController presentLeftMenuViewController];
 }
 
-- (void)presentRightMenuViewController
-{
-    [self.sideMenuViewController presentRightMenuViewController];
-}
 
 @end
 
@@ -492,19 +488,9 @@ NSString * const RBSideMenuDidHideMenuViewController = @"kRBSideMenuDidHideMenuV
             self.didNotifyDelegate = YES;
         }
         
-        
         self.contentViewContainer.transform = CGAffineTransformMakeScale(contentViewScale, contentViewScale);
         self.contentViewContainer.transform = CGAffineTransformTranslate(self.contentViewContainer.transform, point.x, 0);
-    
-        
         self.leftMenuViewController.view.hidden = self.contentViewContainer.frame.origin.x < 0;
-    
-//        if (!self.leftMenuViewController && self.contentViewContainer.frame.origin.x > 0) {
-//            self.contentViewContainer.transform = CGAffineTransformIdentity;
-//            self.contentViewContainer.frame = self.view.bounds;
-//            self.visible = NO;
-//            self.leftMenuVisible = NO;
-//        }
         if (self.contentViewContainer.frame.origin.x < 0) {
             self.contentViewContainer.transform = CGAffineTransformIdentity;
             self.contentViewContainer.frame = self.view.bounds;
@@ -553,7 +539,6 @@ NSString * const RBSideMenuDidHideMenuViewController = @"kRBSideMenuDidHideMenuV
         }
     }
     if([touch.view isKindOfClass:[UISlider class]]){
-        
         return NO;
      }
     if (self.panFromEdge && [gestureRecognizer isKindOfClass:[UIPanGestureRecognizer class]] && !self.visible) {

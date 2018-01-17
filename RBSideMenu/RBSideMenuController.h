@@ -14,7 +14,6 @@
 @property (strong, readonly, nonatomic) RBSideMenuController *sideMenuViewController;
 
 - (void)presentLeftMenuViewController;
-- (void)presentRightMenuViewController;
 @end
 
 @protocol RBSideMenuDelegate <NSObject>

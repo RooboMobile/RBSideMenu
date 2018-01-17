@@ -36,4 +36,4 @@ git push
 git tag -m "update podspec" $thisTag
 git push --tags
 
-pod repo push Roobo_iOS  $podSpecName.podspec --allow-warnings
+pod trunk push  $podSpecName.podspec --allow-warnings
